@@ -20,7 +20,7 @@ import theme from '../styles/theme';
 import axios from 'axios';
 
 export const frontUrl = "https://pluspartners.kr";
-export const backUrl = "https://purplevery6.cafe24.com:8443";
+export const backUrl = "https://purplevery30.cafe24.com:8443";
 export const logoSrc = logo;
 //http://pluspartners.kr:8001
 export const editorState = {

@@ -57,7 +57,7 @@ const VideoList = () => {
                     <SubType onClick={() => { getVideoListByNum(0, 0) }} style={{ backgroundImage: `url(${logo})`, backgroundSize: 'cover', backgroundRepeat: 'no-repeat', backgroundPosition: 'center center', width: '2rem', height: '2rem', margin: '0.5rem', borderRadius: '50%', border: `1px solid ${theme.color.background1}`, opacity: `${channelNum == 0 ? '1' : '0.4'}` }} />
                     {channels.map((item, index) => (
                         <>
-                            <SubType onClick={() => { getVideoListByNum(index + 1, item.pk) }} style={{ backgroundImage: `url(${backUrl + item.channel_img})`, backgroundSize: 'cover', backgroundRepeat: 'no-repeat', backgroundPosition: 'center center', width: '2rem', height: '2rem', margin: '0.5rem', borderRadius: '50%', border: `1px solid ${theme.color.background1}`, opacity: `${index + 1 == channelNum ? '1' : '0.4'}` }} >
+                            <SubType onClick={() => { getVideoListByNum(index + 1, item.pk) }} style={{ backgroundImage: `url(${item.channel_img})`, backgroundSize: 'cover', backgroundRepeat: 'no-repeat', backgroundPosition: 'center center', width: '2rem', height: '2rem', margin: '0.5rem', borderRadius: '50%', border: `1px solid ${theme.color.background1}`, opacity: `${index + 1 == channelNum ? '1' : '0.4'}` }} >
                             </SubType>
                         </>
                     ))}

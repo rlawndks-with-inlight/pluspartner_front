@@ -34,8 +34,8 @@ const MMasterEdit = () => {
                 $('.pw').val("")
                 $('.name').val(response.data.name)
                 $('.nickname').val(response.data.nickname)
-                setUrl(backUrl + response.data.profile_img)
-                setChannelUrl(backUrl + response.data.channel_img)
+                setUrl(response.data.profile_img)
+                setChannelUrl(response.data.channel_img)
             }
         }
         fetchPost();
@@ -99,7 +99,7 @@ const MMasterEdit = () => {
                             </Col>
                             <Col>
                                 <Title>비밀번호</Title>
-                                <Input className='pw' placeholder='****' type={'password'} autoComplete={'new-password'}  />
+                                <Input className='pw' placeholder='****' type={'password'} autoComplete={'new-password'} />
                             </Col>
 
                         </Row>

@@ -31,7 +31,7 @@ const MFeatureCategoryEdit = () => {
                 const { data: response } = await axios.get(`/api/item?table=feature_category&pk=${params.pk}`)
                 $('.title').val(response.data.title)
                 $('.sub-title').val(response.data.sub_title)
-                setUrl(backUrl + response.data.main_img);
+                setUrl(response.data.main_img);
             }
         }
         fetchPost();
@@ -51,7 +51,7 @@ const MFeatureCategoryEdit = () => {
                     if (response.result > 0) {
                         alert('성공적으로 수정되었습니다.');
                         window.history.back();
-                    }else{
+                    } else {
                         alert(response?.message);
                     }
                 } else {
@@ -59,7 +59,7 @@ const MFeatureCategoryEdit = () => {
                     if (response.result > 0) {
                         alert('성공적으로 추가되었습니다.');
                         window.history.back();
-                    }else{
+                    } else {
                         alert(response?.message);
                     }
                 }

@@ -140,9 +140,9 @@ const MItemEdit = () => {
                 obj.note = obj.note.replaceAll('https://pluspartners.kr:8443', backUrl);
                 setNote(obj.note)
                 $('br').removeClass('ProseMirror-trailingBreak');
-                setUrl(backUrl + response.data.main_img);
+                setUrl(response.data.main_img);
                 if (needTwoImage.includes(params.table)) {
-                    setUrl2(backUrl + response.data.second_img);
+                    setUrl2(response.data.second_img);
                 }
                 setItem(response.data)
             } else {
@@ -474,7 +474,7 @@ const MItemEdit = () => {
                                                             let formData = new FormData();
                                                             await formData.append('note', img_src);
                                                             const { data: response } = await axios.post('/api/addimageitems', formData);
-                                                            note = await note.replace(base64, `${backUrl + response?.data[0]?.filename}`)
+                                                            note = await note.replace(base64, `${response?.data[0]?.filename}`)
                                                         }
                                                     }
                                                 }

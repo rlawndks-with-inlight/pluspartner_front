@@ -55,8 +55,8 @@ const MSettingEdit = () => {
             console.log(response)
             setSetting(response.data ?? {});
             if (response.data) {
-                setUrl(response?.data?.main_img ? (backUrl + response?.data?.main_img) : "");
-                setUrl2(response?.data?.banner_2_img ? (backUrl + response?.data?.banner_2_img) : "");
+                setUrl(response?.data?.main_img ? (response?.data?.main_img) : "");
+                setUrl2(response?.data?.banner_2_img ? (response?.data?.banner_2_img) : "");
                 $('.file2-link').val(response?.data?.file2_link);
                 $('.banner_2_status').val(response?.data?.banner_2_status);
             }
@@ -71,14 +71,14 @@ const MSettingEdit = () => {
             formData.append('content', content);
             formData.append('content2', content2);
             formData.append('file2_link', $('.file2-link').val());
-            formData.append('banner_2_status',$('.banner_2_status').val());
+            formData.append('banner_2_status', $('.banner_2_status').val());
             if (setting.main_img) {
                 if (window.confirm("정말 수정하시겠습니까?")) {
                     formData.append('pk', setting?.pk);
                     const { data: response } = await axios.post('/api/updatesetting', formData);
                     if (response.result > 0) {
                         alert("성공적으로 수정되었습니다.")
-                    }else{
+                    } else {
                         alert(response?.message);
                     }
                 }
@@ -87,7 +87,7 @@ const MSettingEdit = () => {
                     const { data: response } = await axios.post('/api/addsetting', formData);
                     if (response.result > 0) {
                         alert("성공적으로 추가되었습니다.")
-                    }else{
+                    } else {
                         alert(response?.message);
                     }
                 }

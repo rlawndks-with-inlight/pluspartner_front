@@ -29,19 +29,19 @@ const MChannelEdit = () => {
             if (params.pk > 0) {
                 const { data: response } = await axios.get(`/api/item?table=user&pk=${params.pk}`)
                 $('.nickname').val(response.data.nickname)
-                setUrl(backUrl + response.data.channel_img)
+                setUrl(response.data.channel_img)
             }
         }
         fetchPost();
     }, [])
     const editChannel = async () => {
-        if (( !$(`.nickname`).val() || !content ) && params.pk == 0) {
+        if ((!$(`.nickname`).val() || !content) && params.pk == 0) {
             alert('필요값이 비어있습니다.');
         } else {
             let time = new Date().getTime();
-            formData.append("id", time+'id');
-            formData.append("pw", time+'pw');
-            formData.append("name", time+'name');
+            formData.append("id", time + 'id');
+            formData.append("pw", time + 'pw');
+            formData.append("name", time + 'name');
             formData.append("nickname", $(`.nickname`).val());
             formData.append("user_level", 25);
             formData.append("channel", content);
@@ -72,7 +72,7 @@ const MChannelEdit = () => {
             setUrl(URL.createObjectURL(e.target.files[0]))
         }
     };
-    
+
     return (
         <>
             <ManagerWrappers>

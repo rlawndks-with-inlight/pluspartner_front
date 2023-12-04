@@ -89,19 +89,19 @@ const MyPage = () => {
         }
     }, [])
     const onLogout = async () => {
-            if (window && window.flutter_inappwebview) {
-                var params = { 'login_type': JSON.parse(localStorage.getItem('auth'))?.type };
-                window.flutter_inappwebview.callHandler('native_app_logout', JSON.stringify(params)).then(async function (result) {
-                    //result = "{'code':100, 'message':'success', 'data':{'login_type':1, 'id': 1000000}}"
-                });
-            }
-            const { data: response } = await axios.post('/api/logout');
-            if (response.result > 0) {
-                localStorage.removeItem('auth');
-                navigate('/login');
-            } else {
-                alert('error');
-            }
+        if (window && window.flutter_inappwebview) {
+            var params = { 'login_type': JSON.parse(localStorage.getItem('auth'))?.type };
+            window.flutter_inappwebview.callHandler('native_app_logout', JSON.stringify(params)).then(async function (result) {
+                //result = "{'code':100, 'message':'success', 'data':{'login_type':1, 'id': 1000000}}"
+            });
+        }
+        const { data: response } = await axios.post('/api/logout');
+        if (response.result > 0) {
+            localStorage.removeItem('auth');
+            navigate('/login');
+        } else {
+            alert('error');
+        }
     }
 
     return (
@@ -114,7 +114,7 @@ const MyPage = () => {
                 </div>
                 <MyCard>
                     <ProfileContainer>
-                        <img src={auth?.profile_img ? auth?.profile_img.substring(0, 4) == "http" ? auth?.profile_img : backUrl + auth?.profile_img : defaultImg} alt="#" onError={defaultImg} style={{ height: '125px', width: '125px', borderRadius: '50%', background: '#fff', margin: 'auto' }} />
+                        <img src={auth?.profile_img ? auth?.profile_img.substring(0, 4) == "http" ? auth?.profile_img : auth?.profile_img : defaultImg} alt="#" onError={defaultImg} style={{ height: '125px', width: '125px', borderRadius: '50%', background: '#fff', margin: 'auto' }} />
                     </ProfileContainer>
                     <Container>
                         <Content>
@@ -128,7 +128,7 @@ const MyPage = () => {
                             <Result>
                                 {auth?.type != 0 ? "---" : auth.id}
                             </Result>
-                            
+
                         </Content>
                         <Content>
                             <Category>비밀번호</Category>

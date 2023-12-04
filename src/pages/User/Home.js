@@ -159,23 +159,23 @@ const Home = () => {
                     :
                     <>
                         <Content>
-                            <img src={backUrl + setting?.main_img} alt="#" style={{ width: '100%', maxWidth: '500px', margin: '0 auto', minHeight: '30vh' }} />
+                            <img src={setting?.main_img} alt="#" style={{ width: '100%', maxWidth: '500px', margin: '0 auto', minHeight: '30vh' }} />
 
                         </Content>
                         <Title className='pointer' link={'/onewordlist'}>하루 1단어</Title>
-                        <Content onClick={() => { navigate(`/post/oneword/${oneWord?.pk}`) }} className='pointer' style={{ minHeight: '40px',marginBottom:'2rem' }}>
+                        <Content onClick={() => { navigate(`/post/oneword/${oneWord?.pk}`) }} className='pointer' style={{ minHeight: '40px', marginBottom: '2rem' }}>
                             <div >{oneWord?.title ?? ""}</div>
                             <div style={{ fontSize: `${theme.size.font4}`, padding: '6px 0 0 0' }}>{oneWord?.hash ?? ""}</div>
                         </Content>
-                        {setting?.banner_2_status>0?
-                        <>
-                        <Content>
-                            <img src={backUrl + setting?.banner_2_img} alt="#" style={{ width: '100%', margin: '0 auto', minHeight: '100px',height:'auto',cursor:'pointer' }} onClick={()=>navigate(setting?.file2_link??"#")} />
-                        </Content>
-                        </>
-                        :
-                        <>
-                        </>
+                        {setting?.banner_2_status > 0 ?
+                            <>
+                                <Content>
+                                    <img src={setting?.banner_2_img} alt="#" style={{ width: '100%', margin: '0 auto', minHeight: '100px', height: 'auto', cursor: 'pointer' }} onClick={() => navigate(setting?.file2_link ?? "#")} />
+                                </Content>
+                            </>
+                            :
+                            <>
+                            </>
                         }
                         <Title className='pointer' link={'/selectissuecategory'} >핵심 이슈{'&'}공시</Title>
                         <Content>
@@ -186,9 +186,9 @@ const Home = () => {
                                             <LazyLoadImage
                                                 alt={"#"}
                                                 effect="blur"
-                                                src={backUrl + item?.main_img}
+                                                src={item?.main_img}
                                                 className='card-img' />
-                                            {/* <Img src={backUrl + item?.main_img} alt="#" /> */}
+                                            {/* <Img src={ item?.main_img} alt="#" /> */}
                                             <div style={{ padding: '16px 16px 0 16px', height: '70px', fontWeight: 'bold' }}> {item?.title}</div>
                                             <div style={{ fontSize: `${theme.size.font4}`, padding: '6px 16px 16px 16px' }}>{item?.hash}</div>
                                         </Card>
@@ -204,7 +204,7 @@ const Home = () => {
                                                 <LazyLoadImage
                                                     alt={"#"}
                                                     effect="blur"
-                                                    src={backUrl + item?.main_img}
+                                                    src={item?.main_img}
                                                     className='card-img' />
                                                 <div style={{ padding: '16px', height: '70px', fontWeight: 'bold' }}> {item?.title}</div>
                                                 <div style={{ fontSize: `${theme.size.font4}`, padding: '8px 16px', height: '50px' }}>{item?.hash}</div>
@@ -249,7 +249,7 @@ const Home = () => {
                                             <LazyLoadImage
                                                 alt={"#"}
                                                 effect="blur"
-                                                src={backUrl + item?.main_img}
+                                                src={item?.main_img}
                                                 className='card-img' />
                                             <div style={{ padding: '16px 16px 0 16px', height: '70px', fontWeight: 'bold' }}> {item?.title}</div>
                                             <div style={{ fontSize: `${theme.size.font4}`, padding: '6px 16px 16px 16px' }}>{item?.hash}</div>
@@ -267,7 +267,7 @@ const Home = () => {
                                                 <LazyLoadImage
                                                     alt={"#"}
                                                     effect="blur"
-                                                    src={backUrl + item?.main_img}
+                                                    src={item?.main_img}
                                                     className='card-img' />
                                                 <div style={{ padding: '16px', height: '70px', fontWeight: 'bold' }}> {item?.title}</div>
                                                 <div style={{ fontSize: `${theme.size.font4}`, padding: '8px 16px', height: '50px' }}>{item?.hash}</div>
@@ -287,7 +287,7 @@ const Home = () => {
                                             <LazyLoadImage
                                                 alt={"#"}
                                                 effect="blur"
-                                                src={backUrl + item?.main_img}
+                                                src={item?.main_img}
                                                 className='card-img' />
                                             <div style={{ padding: '16px 16px 0 16px', height: '70px', fontWeight: 'bold' }}> {item?.title}</div>
                                             <div style={{ fontSize: `${theme.size.font4}`, padding: '6px 16px 16px 16px' }}>{item?.hash}</div>
@@ -304,7 +304,7 @@ const Home = () => {
                                                 <LazyLoadImage
                                                     alt={"#"}
                                                     effect="blur"
-                                                    src={backUrl + item?.main_img}
+                                                    src={item?.main_img}
                                                     className='card-img' />
                                                 <div style={{ padding: '16px', height: '70px', fontWeight: 'bold' }}> {item?.title}</div>
                                                 <div style={{ fontSize: `${theme.size.font4}`, padding: '8px 16px', height: '50px' }}>{item?.hash}</div>

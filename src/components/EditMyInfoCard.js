@@ -45,12 +45,12 @@ const EditMyInfoCard = () => {
     const [isCoinside, setIsCoinside] = useState(false);
     const [isSendSms, setIsSendSms] = useState(false)
     const [fixPhoneNumber, setFixPhoneNumber] = useState("")
-    const [zType, setZType] = useState([ { title: "비밀번호 변경", type:2 },{ title: "프로필 변경", type:0 }, { title: "닉네임 변경", type:1 }, { title: "전화번호 변경", type:3 }])
+    const [zType, setZType] = useState([{ title: "비밀번호 변경", type: 2 }, { title: "프로필 변경", type: 0 }, { title: "닉네임 변경", type: 1 }, { title: "전화번호 변경", type: 3 }])
     useEffect(() => {
         setTypeNum(2);
         let auth = JSON.parse(localStorage.getItem('auth'))
         if (auth.profile_img) {
-            setUrl(auth.profile_img.substring(0, 4) == "http" ? auth.profile_img : backUrl + auth.profile_img)
+            setUrl(auth.profile_img.substring(0, 4) == "http" ? auth.profile_img : auth.profile_img)
         }
         setMyId(auth.id);
     }, [])
@@ -105,21 +105,21 @@ const EditMyInfoCard = () => {
     }
     const addFile = async (e) => {
         if (e.target.files[0]) {
-            const options = { 
-                maxSizeMB: 2, 
+            const options = {
+                maxSizeMB: 2,
                 maxWidthOrHeight: 64
             }
-            try{
+            try {
                 const compressedFile = await imageCompression(e.target.files[0], options);
                 const promise = imageCompression.getDataUrlFromFile(compressedFile);
                 promise.then(result => {
                     setUrl(result);
                 })
                 setContent(compressedFile);
-            }catch(err){
+            } catch (err) {
                 console.log(err);
             }
-            
+
         }
     };
     const onSave = async (num) => {
@@ -194,12 +194,12 @@ const EditMyInfoCard = () => {
                 <SelectType className="select-type">
                     {zType.map((item, idx) => (
                         <>
-                        {localStorage.getItem('is_ios') && item?.type==0 ?<>
-                        </>
-                        :
-                        <>
-                            <Type style={{ borderBottom: `4px solid ${typeNum == item?.type ? theme.color.background1 : '#fff'}`, color: `${typeNum == item?.type ? theme.color.background1 : (localStorage.getItem('dark_mode') ? '#fff' : '#ccc')}` }} onClick={() => { onChangeTypeNum(item?.type) }}>{item.title}</Type>
-                        </>}
+                            {localStorage.getItem('is_ios') && item?.type == 0 ? <>
+                            </>
+                                :
+                                <>
+                                    <Type style={{ borderBottom: `4px solid ${typeNum == item?.type ? theme.color.background1 : '#fff'}`, color: `${typeNum == item?.type ? theme.color.background1 : (localStorage.getItem('dark_mode') ? '#fff' : '#ccc')}` }} onClick={() => { onChangeTypeNum(item?.type) }}>{item.title}</Type>
+                                </>}
                         </>
                     ))}
 

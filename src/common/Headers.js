@@ -202,7 +202,7 @@ const Headers = () => {
     }
     insertVisit(location.pathname);
   }, [location])
-  useEffect(()=>{
+  useEffect(() => {
     if (uriQueue[uriQueue.length - 1]) {
       if (uriQueue[uriQueue.length - 1] != location.pathname) {
         setUriQueue([...uriQueue, location.pathname]);
@@ -210,7 +210,7 @@ const Headers = () => {
     } else {
       setUriQueue([...uriQueue, location.pathname]);
     }
-  },[location.pathname])
+  }, [location.pathname])
   const insertVisit = async (pathname) => {
     const { data: response } = await axios.post('/api/insertvisit', {
       pathname: pathname
@@ -336,7 +336,7 @@ const Headers = () => {
   const onClickNavigateBefore = () => {
     if (uriQueue.length > 1) {
       let uri_queue = [...uriQueue];
-      let bafore_link = uriQueue[uriQueue.length-2];
+      let bafore_link = uriQueue[uriQueue.length - 2];
       uri_queue.pop();
       uri_queue.pop();
       setUriQueue(uri_queue);
@@ -363,7 +363,7 @@ const Headers = () => {
                     <>
                       <PopupContent>
                         <IoMdClose style={{ color: theme.color.background1, position: 'absolute', right: '8px', top: '8px', fontSize: theme.size.font3, cursor: 'pointer' }} onClick={() => { onClosePopup(item?.pk) }} />
-                        <img src={backUrl + item?.img_src} style={{ width: '100%', height: 'auto' }} onClick={() => { navigate(item?.link) }} />
+                        <img src={item?.img_src} style={{ width: '100%', height: 'auto' }} onClick={() => { navigate(item?.link) }} />
                         <div style={{ display: 'flex', alignItems: 'center', position: 'absolute', left: '8px', bottom: '8px' }}>
                           <IoCloseCircleOutline style={{ color: theme.color.background1, fontSize: theme.size.font3, marginRight: '4px', cursor: 'pointer' }} onClick={() => { onClosePopup(item?.pk, true) }} />
                           <div style={{ fontSize: theme.size.font5 }}>오늘 하루 보지않기</div>

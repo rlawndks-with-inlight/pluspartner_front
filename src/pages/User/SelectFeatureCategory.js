@@ -60,10 +60,10 @@ const SelectFeatureCategory = () => {
                 {posts.map((item, idx) => (
                     <>
                         <Card onClick={() => { navigate(`/featurelist/${item.pk}`, { state: item.title }) }} style={{ display: 'flex', alignItems: 'center' }}>
-                            <Img src={item?.main_img?backUrl + item?.main_img:logoSrc} alt="#" />
+                            <Img src={item?.main_img ? item?.main_img : logoSrc} alt="#" />
                             <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-start', margin: '0 auto 0 0' }}>
-                                <SubTitle>{item?.sub_title??"---"}</SubTitle>
-                                <Title>{item?.title??"---"}</Title>
+                                <SubTitle>{item?.sub_title ?? "---"}</SubTitle>
+                                <Title>{item?.title ?? "---"}</Title>
                             </div>
                             <MdNavigateNext className="smaller-margin-right-content" />
                         </Card>

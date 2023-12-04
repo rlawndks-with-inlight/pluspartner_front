@@ -34,12 +34,12 @@ const MasterList = () => {
             <Wrappers>
                 {posts.map((item, idx) => (
                     <>
-                        <Card onClick={() => { navigate(`/master/${item.pk}`,{state:{name:item.name,nickname:item.nickname,img:item.profile_img}}) }}>
+                        <Card onClick={() => { navigate(`/master/${item.pk}`, { state: { name: item.name, nickname: item.nickname, img: item.profile_img } }) }}>
                             <div style={{ width: '50%', padding: '20px' }}>
                                 <div>{item.nickname}</div>
                                 <div style={{ fontSize: `${theme.size.font5}`, marginTop: '8px', color: `${theme.color.font2}` }}>{item.name} 전문가</div>
                             </div>
-                            <img style={{ position: 'absolute', bottom: '0', right: '5%', height: '80%' }} alt="#" src={backUrl + item.profile_img} />
+                            <img style={{ position: 'absolute', bottom: '0', right: '5%', height: '80%' }} alt="#" src={item.profile_img} />
                         </Card>
                     </>
                 ))}

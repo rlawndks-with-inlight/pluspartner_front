@@ -31,7 +31,7 @@ const MPopupEdit = () => {
                 const { data: response } = await axios.get(`/api/item?table=popup&pk=${params.pk}`)
                 console.log(response)
                 $('.link').val(response.data.link)
-                setUrl(backUrl + response.data?.img_src);
+                setUrl(response.data?.img_src);
             }
         }
         fetchPost();
@@ -50,7 +50,7 @@ const MPopupEdit = () => {
                     if (response.result > 0) {
                         alert('성공적으로 수정되었습니다.');
                         window.history.back();
-                    }else{
+                    } else {
                         alert(response?.message);
                     }
                 } else {
@@ -58,7 +58,7 @@ const MPopupEdit = () => {
                     if (response.result > 0) {
                         alert('성공적으로 추가되었습니다.');
                         window.history.back();
-                    }else{
+                    } else {
                         alert(response?.message);
                     }
                 }

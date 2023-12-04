@@ -348,7 +348,7 @@ const MVideoEdit = () => {
                                                             let formData = new FormData();
                                                             await formData.append('note', img_src);
                                                             const { data: response } = await axios.post('/api/addimageitems', formData);
-                                                            note = await note.replace(base64, `${backUrl + response?.data[0]?.filename}`)
+                                                            note = await note.replace(base64, `${response?.data[0]?.filename}`)
                                                         }
                                                     }
                                                 }

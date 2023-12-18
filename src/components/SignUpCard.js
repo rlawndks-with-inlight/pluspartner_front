@@ -4,7 +4,7 @@ import { useEffect, useState } from 'react';
 import { useNavigate, Link, useLocation } from 'react-router-dom';
 import $ from 'jquery';
 import axios from 'axios';
-import logo from '../assets/images/test/logo.svg'
+import logo from '../assets/images/test/logo.png'
 import kakao from '../assets/images/icon/kakao.png'
 import naver from '../assets/images/icon/naver.png'
 import { Title } from './elements/UserContentTemplete';
@@ -31,7 +31,7 @@ const SignUpCard = () => {
     const [isRegPw, setIsRegPw] = useState(false)
     useEffect(() => {
         if (location.state) {
-            if(!location.state.id){
+            if (!location.state.id) {
                 navigate(-1);
             }
             setState(location.state)
@@ -186,7 +186,7 @@ const SignUpCard = () => {
             confirmCoincide();
         }
     }
-    const onChangePw = (e) =>{
+    const onChangePw = (e) => {
         setIsRegPw(regExp('pw', e.target.value))
     }
     const onChangePwCheck = (e) => {
@@ -211,7 +211,7 @@ const SignUpCard = () => {
                         <Button onClick={onCheckId} disabled={isCheckId}>{isCheckId ? '사용가능' : '중복확인'}</Button>
                         <CategoryName>비밀번호</CategoryName>
                         <Input placeholder='비밀번호를 입력해주세요.' type={'password'} className='pw' onKeyPress={onKeyPressPw} onChange={onChangePw} />
-                        <RegularNotice>{isRegPw?'':'8~15자 내의 영문, 숫자, 특수문자 조합만 가능합니다.'}</RegularNotice>
+                        <RegularNotice>{isRegPw ? '' : '8~15자 내의 영문, 숫자, 특수문자 조합만 가능합니다.'}</RegularNotice>
                         <CategoryName>비밀번호 확인</CategoryName>
                         <Input placeholder='비밀번호를 한번더 입력해주세요.' type={'password'} className='pw-check' onKeyPress={onKeyPressPwCheck} onChange={onChangePwCheck} />
                         <RegularNotice>{!coinsidePW ? '비밀번호가 일치하지 않습니다.' : ''}</RegularNotice>

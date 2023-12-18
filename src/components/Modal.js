@@ -3,7 +3,7 @@ import styled from 'styled-components'
 import { useEffect, useState } from 'react';
 import { useNavigate, Link, useParams } from 'react-router-dom';
 import '../styles/style.css'
-import logo from '../assets/images/test/logo.svg'
+import logo from '../assets/images/test/logo.png'
 const ModalContainer = styled.div`
 
 position: fixed;

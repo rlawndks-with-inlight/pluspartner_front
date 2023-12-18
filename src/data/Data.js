@@ -14,7 +14,7 @@ import talkActiveImg from '../assets/images/icon/talk-active.svg';
 import thumbImg from '../assets/images/icon/thumb.svg';
 import thumbWhiteImg from '../assets/images/icon/thumb-white.svg';
 import thumbActiveImg from '../assets/images/icon/thumb-active.svg';
-import logo from '../assets/images/test/logo.svg'
+import logo from '../assets/images/test/logo.png'
 import { EditorState } from "draft-js"
 import theme from '../styles/theme';
 import axios from 'axios';

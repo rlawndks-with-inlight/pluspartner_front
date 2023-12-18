@@ -4,7 +4,7 @@ import { useEffect, useState } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
 import $ from 'jquery';
 import axios from 'axios';
-import logo from '../assets/images/test/logo.svg'
+import logo from '../assets/images/test/logo.png'
 const WrapperForm = styled.div`
 width:90%;
 background:#fff;
@@ -98,7 +98,7 @@ const MLoginCard = () => {
             id: $('.id').val(),
             pw: $('.pw').val()
         })
-        
+
         if (response.result > 0) {
             await localStorage.setItem('auth', JSON.stringify(response.data));
             if (response.data?.user_level >= 40) {
@@ -108,7 +108,7 @@ const MLoginCard = () => {
             } else if (response.data?.user_level >= 30) {
                 alert(response.message);
                 navigate('/manager/list/strategy');
-            }else{
+            } else {
                 alert("아이디 또는 비밀번호를 확인해주세요.");
                 navigate("/")
             }
@@ -116,7 +116,7 @@ const MLoginCard = () => {
     }
     const onKeyPressId = (e) => {
         if (e.key == 'Enter') {
-          $('.pw').focus();
+            $('.pw').focus();
         }
     }
     const onKeyPressPw = (e) => {

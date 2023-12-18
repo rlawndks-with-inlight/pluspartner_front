@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import styled from "styled-components";
-import logo from '../assets/images/test/logo.svg';
+import logo from '../assets/images/test/logo.png';
 import kakao from '../assets/images/icon/kakao.png'
 import kakaoFotterIcon from '../assets/images/test/kakao-footer.png'
 const Wrappers = styled.footer`
@@ -84,7 +84,7 @@ const Footer = () => {
                         </div>
                         {/* <div style={{ marginTop: '8px' }}>서울시 마포구 양화로 127 7층(첨단빌딩)</div> */}
                         <Flex style={{ justifyContent: 'space-between', alignItems: 'center' }}>
-                            
+
                             <Flex>
 
                                 <div style={{ marginRight: '16px' }}>Email&nbsp;&nbsp;First_partner@naver.com</div>

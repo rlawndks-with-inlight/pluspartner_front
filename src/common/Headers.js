@@ -3,7 +3,7 @@ import styled from 'styled-components'
 import { useEffect, useState } from 'react';
 import { useNavigate, Link, useParams, useLocation } from 'react-router-dom';
 import '../styles/style.css'
-import logo from '../assets/images/test/logo.svg'
+import logo from '../assets/images/test/logo.png'
 import { AiOutlineBell, AiOutlineSearch, AiOutlineSetting } from 'react-icons/ai'
 import Modal from '../components/Modal';
 import axios from 'axios'
@@ -402,7 +402,7 @@ const Headers = () => {
                   </>
                   :
                   <>
-                    <img src={logo} alt="홈으로" style={{ height: '2.5rem', marginTop: '0.25rem' }} onClick={() => { navigate('/') }} />
+                    <img src={logo} alt="홈으로" style={{ height: '1rem', marginTop: '0.25rem' }} onClick={() => { navigate('/') }} />
                   </>}
               </div>
               <div style={{ display: 'flex', fontSize: '1.2rem', width: '100px', justifyContent: 'space-between', position: 'relative' }}>
@@ -429,8 +429,8 @@ const Headers = () => {
               </>
             ))}
           </div>
-          <div style={{ position: 'absolute', right: '48%', top: '0.5rem' }}>
-            <img src={logo} alt="홈으로" style={{ height: '5rem' }} onClick={() => { navigate('/') }} />
+          <div style={{ position: 'absolute', top: '2rem', left: '50%', transform: `translate(-50%, 0)` }}>
+            <img src={logo} alt="홈으로" style={{ height: '1.5rem' }} onClick={() => { navigate('/') }} />
           </div>
           <div style={{ display: 'flex', fontSize: '1.2rem', width: '7rem', justifyContent: 'space-between', position: 'relative' }}>
             <AiOutlineBell onClick={onClickBell} style={{ width: '2rem', height: '1.5rem', cursor: 'pointer' }} />
